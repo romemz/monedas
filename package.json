@@ -1,0 +1,13 @@
+{
+  "name": "conversor-monedas",
+  "version": "1.0.0",
+  "description": "Conversor de pesos a dólares",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "open": "^11.0.0"
+  }
+}

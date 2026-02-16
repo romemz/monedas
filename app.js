@@ -10,7 +10,7 @@ app.post('/convertir', (req, res) => {
     const { pesos } = req.body;
     const tasaCambio = 17.10; // 1 dólar = 17.10 pesos
     const dolares = (pesos / tasaCambio).toFixed(2);
-    res.json({ dolares });
+    res.json({ dolares, tasaCambio });
 });
 
 app.listen(3001, () => {

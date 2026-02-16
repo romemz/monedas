@@ -6,20 +6,12 @@ document.getElementById('btnConvertir').addEventListener('click', () => {
     return;
   }
 
-  fetch('/convertir', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ pesos: parseFloat(pesos) })
-  })
-  .then(r => r.json())
-  .then(data => {
-    document.getElementById('dolares').value = '$' + data.dolares + ' USD';
-    document.getElementById('dolares').className = 'resultado-exitoso';
-  })
-  .catch(err => {
-    alert('Error en la conversión');
-    console.error(err);
-  });
+  // Conversión directa sin servidor
+  const tasaCambio = 17.10; // 1 dólar = 17.10 pesos
+  const dolares = (parseFloat(pesos) / tasaCambio).toFixed(2);
+  
+  document.getElementById('dolares').value = '$' + dolares + ' USD';
+  document.getElementById('dolares').className = 'resultado-exitoso';
 });
 
 document.getElementById('btnLimpiar').addEventListener('click', () => {
